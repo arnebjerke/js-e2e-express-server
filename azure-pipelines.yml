@@ -26,3 +26,9 @@ steps:
     testType: 'app'
     monitorWhen: 'always'
     failOnIssues: true
+
+- script: |
+    npm install -g snyk
+    snyk auth # Authenticate with your Snyk account if not already authenticated
+    snyk test
+  displayName: 'Run Snyk Test for Dependencies'
